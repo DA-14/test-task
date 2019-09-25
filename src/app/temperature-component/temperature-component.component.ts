@@ -4,7 +4,7 @@ import { interval, Observable, Subscription } from 'rxjs';
 
 import { AppState } from '../store/interfaces/app-state.interface';
 import { selectNewYorkTemperature, selectSeattleTemperature } from '../store/reducers/temperature.reducer';
-import { change, decrease, increase } from '../store/actions/temperature.actions';
+import { change, decrease, increase, reset } from '../store/actions/temperature.actions';
 
 @Component({
   selector: 'app-temperature-component',
@@ -32,6 +32,14 @@ export class TemperatureComponentComponent implements OnInit, OnDestroy {
     this.store.dispatch(increase());
     this.store.dispatch(decrease());
     this.store.dispatch(decrease());
+  }
+
+  stop() {
+    this.clearTimerSubscription();
+  }
+
+  reset() {
+    this.store.dispatch(reset());
   }
 
   private startTimer() {
