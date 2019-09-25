@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <h1>Temperature component</h1>
+  <div class="current-temperature">
+    <div>New york temperature: {{newYorkTemperature$ | async}}</div>
+  </div>
+  <div class="current-temperature">
+    <div>Seattle temperature: {{seattleTemperature$ | async}}</div>
+  </div>
+  <button type="button" (click)="start()">Start</button>
+</div>

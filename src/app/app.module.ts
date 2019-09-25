@@ -7,11 +7,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { AppComponent } from './app.component';
 import { temperatureReducer } from './store/reducers/temperature.reducer';
 import { InputIndicatorComponent } from './input-indicator/input-indicator.component';
+import { TemperatureComponentComponent } from './temperature-component/temperature-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputIndicatorComponent
+    InputIndicatorComponent,
+    TemperatureComponentComponent
   ],
   imports: [
     BrowserModule,

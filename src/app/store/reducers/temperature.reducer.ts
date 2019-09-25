@@ -16,7 +16,7 @@ const _temperatureReducer = createReducer<AppTemperatureState>(initialState,
   })),
   on(decrease, (state: AppTemperatureState) => ({
     ...state,
-    seattle: --state.newYork
+    seattle: --state.seattle
   })),
 );
 
