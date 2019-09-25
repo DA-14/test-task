@@ -8,11 +8,9 @@
   </form>
 
   <div fxLayout="row" fxLayoutAlign="start center">
-    <span class="no-wrap"> Rendered result: </span>
     <div class="input-result"
-         [class.invalid]="form.get('inputValue').invalid"
          fxFlex>
-      {{form.get('inputValue').value}}
+      Rendered result: {{form.get('inputValue').value}}
     </div>
   </div>
 </div>
