@@ -1,0 +1,11 @@
+@import "variables";
+
+@mixin blue-border-wrapper {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  border: 1px solid $blue;
+  border-radius: 3px;
+  padding: 5px;
+  margin-left: 10px;
+}
