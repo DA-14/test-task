@@ -8,22 +8,10 @@
   }
 
   .input-result {
+    display: inline-block;
+    @include blue-border-wrapper;
     &.invalid {
       border-color: $red;
-    }
-  }
-
-  .input-form {
-    margin-bottom: 15px;
-    input {
-      @include blue-border-wrapper;
-      outline: none;
-      font-size: 1em;
-    }
-    &.ng-invalid {
-      input {
-        border-color: $red;
-      }
     }
   }
 }

@@ -1,16 +1,8 @@
 <div class="wrapper">
   <h1>Input indicator component</h1>
-  <form class="input-form" [formGroup]="form">
-    <label fxLayout="row" fxLayoutAlign="start center">
-      <span class="no-wrap"> Input Value: </span>
-      <input type="number" formControlName="inputValue" fxFlex>
-    </label>
-  </form>
-
   <div fxLayout="row" fxLayoutAlign="start center">
-    <div class="input-result"
-         fxFlex>
-      Rendered result: {{form.get('inputValue').value}}
+    <div class="input-result" [class.invalid]="inputValue < 0">
+      {{inputValue}}
     </div>
   </div>
 </div>
