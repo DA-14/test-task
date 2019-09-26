@@ -1,23 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-input-indicator',
   templateUrl: './input-indicator.component.html',
-  styleUrls: ['./input-indicator.component.scss']
+  styleUrls: ['./input-indicator.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class InputIndicatorComponent implements OnInit {
-  form: FormGroup;
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit() {
-    this.createForm();
-  }
-
-  createForm() {
-    this.form = this.fb.group({
-      inputValue: [null, Validators.min(0)]
-    });
-  }
-
+export class InputIndicatorComponent {
+  @Input() inputValue: number;
 }

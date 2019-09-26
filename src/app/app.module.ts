@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
-import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
@@ -17,7 +16,6 @@ import { TemperatureComponentComponent } from './temperature-component/temperatu
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
     FlexLayoutModule,
     StoreModule.forRoot({ temperatureState: temperatureReducer })
   ],
