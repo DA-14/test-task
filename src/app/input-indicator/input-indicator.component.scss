@@ -2,11 +2,6 @@
 @import "../../assets/style/mixins";
 
 :host {
-  .wrapper {
-    display: block;
-    padding: 15px;
-  }
-
   .input-result {
     display: inline-block;
     @include blue-border-wrapper;

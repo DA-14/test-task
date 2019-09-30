@@ -1,10 +1,11 @@
 <div class="wrapper">
   <h1>Temperature component</h1>
-  <div class="current-temperature">
-    <div>New york temperature: {{newYorkTemperature$ | async}}</div>
+  <div class="current-temperature" fxLayout="row">
+    New york temperature: <app-input-indicator [inputValue]="newYorkTemperature$ | async"></app-input-indicator>
+
   </div>
-  <div class="current-temperature">
-    <div>Seattle temperature: {{seattleTemperature$ | async}}</div>
+  <div class="current-temperature" fxLayout="row" fxFlexAlign="center">
+    Seattle temperature: <app-input-indicator [inputValue]="seattleTemperature$ | async"></app-input-indicator>
   </div>
   <button type="button" (click)="start()">Start</button>
   <button type="button" (click)="stop()">Stop</button>
