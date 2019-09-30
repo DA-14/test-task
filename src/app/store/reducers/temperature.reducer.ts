@@ -1,5 +1,7 @@
 import { createReducer, createSelector, on } from '@ngrx/store';
-import { change, decrease, increase, reset } from '../actions/temperature.actions';
+import produce, { Draft } from 'immer';
+
+import { decrease, increase, reset } from '../actions/temperature.actions';
 import { AppTemperatureState } from '../interfaces/temperature-state.interface';
 import { AppState } from '../interfaces/app-state.interface';
 
@@ -9,16 +11,19 @@ export const initialState: AppTemperatureState = {
 };
 
 const _temperatureReducer = createReducer<AppTemperatureState>(initialState,
-  on(change, (state: AppTemperatureState) => state),
-  on(increase, (state: AppTemperatureState) => ({
-    ...state,
-    newYork: state.newYork + 1
-  })),
-  on(decrease, (state: AppTemperatureState) => ({
-    ...state,
-    seattle: state.seattle - 1
-  })),
-  on(reset, () => ({ ...initialState })),
+  on(increase, (state: AppTemperatureState) =>
+    produce(state, (draft: Draft<AppTemperatureState>) => {
+      draft.newYork++;
+    })
+  ),
+  on(decrease, (state: AppTemperatureState) =>
+    produce(state, (draft: Draft<AppTemperatureState>) => {
+      draft.seattle--;
+    })
+  ),
+  on(reset, (state: AppTemperatureState) =>
+    produce(state, () => initialState)
+  ),
 );
 
 export function temperatureReducer(state, action) {
